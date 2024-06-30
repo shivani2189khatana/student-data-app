@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Preview Uploaded CSV</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Address</th>
+        <th>GPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td [class.error]="row.errors?.Name">{{ row.Name }}</td>
+        <td [class.error]="row.errors?.Email">{{ row.Email }}</td>
+        <td [class.error]="row.errors?.PhoneNumber">{{ row.PhoneNumber }}</td>
+        <td [class.error]="row.errors?.City">{{ row.City }}</td>
+        <td [class.error]="row.errors?.Address">{{ row.Address }}</td>
+        <td [class.error]="row.errors?.GPA">{{ row.GPA }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="onNext()">Next</button>
+  <div *ngIf="errors.length > 0" class="error-list">
+    <h3>Errors</h3>
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+</div>

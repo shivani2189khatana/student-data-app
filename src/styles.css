@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    margin: 20px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  body {
+  background-color: #e6e6fa;
+  }
+  

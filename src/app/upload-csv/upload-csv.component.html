@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="upload-header">
+    <h2>Upload CSV</h2>
+    <button class="close-button" (click)="close()">×</button>
+  </div>
+  <div class="upload-body">
+    <div class="file-upload">
+      <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
+      <label for="fileInput" class="file-drop-zone">
+        <div class="file-drop-icon">⬆️</div>
+        <span>Select a CSV file to upload</span>
+        <span>or drag and drop it here</span>
+      </label>
+      <div id="fileNameDisplay" class="file-name-display"></div>
+    </div>
+    
+    <div class="url-upload">
+      <input type="text" placeholder="Or upload from URL" [(ngModel)]="fileUrl">
+    </div>
+    <button (click)="onUpload()">Upload</button>
+  </div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>
